@@ -17,7 +17,7 @@ function ModifyTree(options){
 
 ModifyTree.prototype._create = function() {
     var contentNode = document.createElement('div');
-    var tmpBlockNode = this._createBlock(this._blockTag, this._blockClass);
+    var blockNode = this._createBlock(this._blockTag, this._blockClass);
 
     for (var i = 0; i < this._container.childElementCount; i++){
 
@@ -28,11 +28,11 @@ ModifyTree.prototype._create = function() {
             continue;
         }
 
-        this._addCloneElementToNode(currentElement, tmpBlockNode);
+        this._addCloneElementToNode(currentElement, blockNode);
 
         if(this._lastStraightElement(currentElement)){
-            contentNode.appendChild(tmpBlockNode);
-            tmpBlockNode = this._createBlock(this._blockTag, this._blockClass);
+            contentNode.appendChild(blockNode);
+            blockNode = this._createBlock(this._blockTag, this._blockClass);
         }
     }
 
