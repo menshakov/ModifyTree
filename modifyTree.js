@@ -58,6 +58,5 @@ ModifyTree.prototype._lastStraightElement = function(el) {
 ModifyTree.prototype._createBlock = function(tag, className) {
     var block = document.createElement(tag);
     block.setAttribute('class', className);
-
     return block;
 };
